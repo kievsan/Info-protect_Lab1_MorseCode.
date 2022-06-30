@@ -38,9 +38,7 @@ def is_exit(question):
 
 
 if __name__ == '__main__':
-    while True:
-        if is_exit('Хотите завершить?'):
-            exit()
+    while not is_exit('Хотите завершить?'):
         taskMorse = start_menu('language', Morse._startTaskMorse)
         taskMorse = start_menu('mode', taskMorse)
         msg = str(input('Enter data for ' +
@@ -53,4 +51,4 @@ if __name__ == '__main__':
         else:
             task1 = Morse.Decoder(taskMorse)
         print('\nЗапущен', task1)
-        print(f'Получен результат >>    {task1.translate()}')
+        print(f'Получен результат >>\t{task1.translate()}')
