@@ -66,7 +66,7 @@ class _App:
                 'values': list(self.code_tables.values()),
                 'beingTranslated': ''.join([str(i) for i in self.incoming_list])}
 
-    def _translated_complete(self, translated_message):
+    def _translate_completed(self, translated_message):
         return translated_message.strip()
 
     def translate(self):
@@ -83,7 +83,7 @@ class _App:
                 print(f'char "{one_char}" not found...\n\t{ex}\n')
                 translated_char = '?'
             translated_message += translated_char + " "
-        return self._translated_complete(translated_message)
+        return self._translate_completed(translated_message)
 
 
 class Encoder(_App):
@@ -104,5 +104,5 @@ class Decoder(_App):
                 'values': list(self.code_tables.keys()),
                 'beingTranslated': self.incoming_list}
 
-    def _translated_complete(self, translated_message):
+    def _translate_completed(self, translated_message):
         return ''.join([str(i) for i in translated_message.strip().split(' ')])
