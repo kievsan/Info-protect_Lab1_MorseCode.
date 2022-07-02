@@ -34,7 +34,7 @@ def start_menu(section, taskMorse):
 
 def is_exit(question):
     ex = input(question + ' ("y" - Ok) >>')
-    return ex == 'y' or ex == 'Y' or ex == 'н' or ex == 'Н'
+    return ex in ['y', 'Y', 'н', 'Н']
 
 
 if __name__ == '__main__':
